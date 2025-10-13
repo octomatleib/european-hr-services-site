@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>European HR Services - Deutsch</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .image-container img {
+      max-width: 45%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .image-container img {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -15,6 +37,11 @@
     <h1>Unsere Website wird derzeit überarbeitet</h1>
     <p>Wir sind bald mit einem neuen Design zurück. In der Zwischenzeit können Sie uns kontaktieren:</p>
     <p><strong>info@european-hr-services.de</strong></p>
+    
+    <div class="image-container">
+      <img src="../assets/images/Pflichtpraktikum_1.jpg" alt="Pflichtpraktikum 1">
+      <img src="../assets/images/Pflichtpraktikum_2.jpg" alt="Pflichtpraktikum 2">
+    </div>
   </main>
   <footer class="footer">
     <p>&copy; 2025 European HR Services</p>
