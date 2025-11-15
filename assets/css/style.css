@@ -69,6 +69,22 @@ h1 {
   text-align: center;
   padding: 1rem;
 }
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+.footer a {
+  color: #DBD700;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 @media (max-width: 600px) {
   .main {
     padding: 1rem;
@@ -86,4 +102,102 @@ nav a {
 
 nav a:hover {
   color: #c0c000; /* optional darker yellow hover effect */
+}
+
+/* Tab Navigation Styles */
+.tab-navigation {
+  background: #075563;
+  padding: 0;
+  text-align: center;
+  border-bottom: 3px solid #DBD700;
+}
+
+.tab-navigation button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+}
+
+.tab-navigation button:hover {
+  background: rgba(219, 215, 0, 0.1);
+}
+
+.tab-navigation button.active {
+  background: #f9f9f9;
+  color: #075563;
+  border-bottom: 3px solid #DBD700;
+}
+
+/* Tab Content Styles */
+.tab-content {
+  display: none;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tab-content h2 {
+  color: #075563;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tab-content h3 {
+  color: #075563;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tab-content p {
+  margin-bottom: 1rem;
+}
+
+.tab-content ul {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.tab-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design for Tabs */
+@media (max-width: 600px) {
+  .tab-navigation button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .tab-navigation button.active {
+    border-left: 4px solid #DBD700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .tab-content {
+    padding: 1rem;
+  }
 }

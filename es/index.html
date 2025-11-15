@@ -9,15 +9,219 @@
 <body>
   <header class="header">
     <a href="../index.html"><img src="../assets/images/logo.jpg" alt="European HR Services Logo" class="logo"></a>
-    <nav><a href="../en/">EN</a> | <a href="../de/">DE</a> | <a href="../es/">ES</a></nav>
+    <nav><a href="../en/" onclick="saveCurrentTab()">EN</a> | <a href="../de/" onclick="saveCurrentTab()">DE</a> | <a href="../es/" onclick="saveCurrentTab()">ES</a></nav>
   </header>
+
+  <div class="tab-navigation">
+    <button class="tab-button active" onclick="openTab(event, 'bienvenido')">Bienvenido</button>
+    <button class="tab-button" onclick="openTab(event, 'sobre-nosotros')">Sobre Nosotros</button>
+  </div>
+
   <main class="main">
-    <h1>Nuestro sitio web está siendo rediseñado</h1>
-    <p>Pronto volveremos con un nuevo diseño. Mientras tanto, puede contactarnos:</p>
-    <p><strong>info@european-hr-services.de</strong></p>
+    <div id="bienvenido" class="tab-content active">
+      <h1>🌍 Bienvenido a European HR Services GmbH</h1>
+
+      <h2>Conectando Talento Global con la Excelencia Alemana</h2>
+
+      <p>En European HR Services GmbH, nos especializamos en conectar a los principales empleadores de Alemania con profesionales altamente cualificados de todo el mundo. Ya sea que busques ingenieros, expertos en TI, especialistas en salud u otros perfiles altamente demandados, llevamos la experiencia global directamente a tu empresa.</p>
+
+      <h2>💼 Qué Hacemos</h2>
+
+      <p><strong>Reclutamiento Internacional:</strong> Buscamos, evaluamos y colocamos candidatos de primer nivel provenientes de Europa, Asia, África y América.</p>
+
+      <p><strong>Soporte Integral:</strong> Desde la asistencia con visados hasta la integración cultural, guiamos a candidatos y empresas en cada paso del proceso.</p>
+
+      <p><strong>Especialización Sectorial:</strong> Trabajamos en sectores como tecnología, ingeniería, salud, finanzas y más.</p>
+
+      <h2>🌐 ¿Por Qué Elegirnos?</h2>
+
+      <p><strong>Consultores Multilingües:</strong> Nuestro equipo habla alemán, inglés, español, francés, árabe y otros idiomas, garantizando una comunicación fluida entre culturas.</p>
+
+      <p><strong>Expertos Altamente Educados:</strong> Nuestros consultores cuentan con títulos universitarios avanzados en recursos humanos, negocios, derecho, relaciones internacionales, TI, medicina y ortodoncia.</p>
+
+      <p><strong>Red Global:</strong> Mantenemos alianzas con universidades, centros de formación y redes profesionales en todo el mundo.</p>
+
+      <p><strong>Precisión Alemana, Alcance Global:</strong> Combinamos la rigurosidad de la cultura empresarial alemana con la agilidad del reclutamiento internacional.</p>
+
+      <h2>🤝 Para Empleadores</h2>
+
+      <p>¿Buscas profesionales cualificados dispuestos a reubicarse y aportar desde el primer día? Adaptamos nuestra búsqueda a las necesidades de tu empresa, asegurando compatibilidad cultural y éxito a largo plazo.</p>
+
+      <h2>✈️ Para Candidatos</h2>
+
+      <p>¿Sueñas con una carrera en Alemania? Te ayudamos a navegar el mercado laboral, prepararte para entrevistas y establecerte con confianza en tu nueva vida.</p>
+
+      <h2>📞 Contáctanos</h2>
+
+      <p>¿Listo para formar el equipo de tus sueños o dar el siguiente paso en tu carrera? Contáctanos hoy y descubre cómo European HR Services GmbH puede hacer que el reclutamiento global se sienta local.</p>
+
+      <p><strong>Correo: info@european-hr-services.de</strong></p>
+    </div>
+
+    <div id="sobre-nosotros" class="tab-content">
+      <h1>Sobre Nosotros</h1>
+
+      <h2>Tu Puente al Talento Global</h2>
+
+      <p>European HR Services GmbH es una consultora de reclutamiento con enfoque internacional, con sede en Alemania. Nuestra misión es conectar a profesionales altamente cualificados de todo el mundo con empresas líderes en Alemania, de forma eficiente, sostenible y con afinidad cultural.</p>
+
+      <h2>Nuestra Misión</h2>
+
+      <p>Creemos que el talento no tiene fronteras. Nuestro objetivo es vincular a las empresas con las mentes más brillantes del mundo, al mismo tiempo que ofrecemos a los candidatos nuevas oportunidades profesionales en Alemania.</p>
+
+      <h2>Lo Que Nos Distingue</h2>
+
+      <p><strong>Experiencia Internacional:</strong> Contamos con una red global y años de experiencia reclutando profesionales de Europa, Asia, África y América.</p>
+
+      <p><strong>Equipo Altamente Cualificado:</strong> Nuestros consultores poseen títulos universitarios avanzados en recursos humanos, negocios, derecho, TI, medicina y relaciones internacionales.</p>
+
+      <p><strong>Comunicación Multilingüe:</strong> Nuestro equipo habla alemán, inglés, español, francés, árabe, ruso, hindi y más - garantizando una comunicación fluida con candidatos y empresas en todo el mundo.</p>
+
+      <p><strong>Enfoque Integral:</strong> Acompañamos a nuestros clientes y candidatos desde el primer contacto hasta la integración exitosa, incluyendo asesoría de visado, reubicación y coaching intercultural.</p>
+
+      <h2>Nuestros Valores</h2>
+
+      <p><strong>Confianza:</strong> Construimos relaciones a largo plazo con empresas y candidatos.</p>
+
+      <p><strong>Transparencia:</strong> Procesos claros, comunicación abierta y asesoramiento honesto son el núcleo de nuestro trabajo.</p>
+
+      <p><strong>Diversidad:</strong> Promovemos la diversidad cultural y la consideramos una fortaleza para el mercado laboral alemán.</p>
+
+      <p><strong>Excelencia:</strong> Buscamos la más alta calidad en consultoría, selección y acompañamiento.</p>
+
+      <h2>Construyamos el Futuro Juntos</h2>
+
+      <p>Ya sea que seas una empresa en busca de talento internacional o un candidato listo para comenzar su carrera en Alemania - European HR Services GmbH es tu socio de confianza.</p>
+
+      <p><strong>Correo: info@european-hr-services.de</strong></p>
+    </div>
+
+    <div id="aviso-legal" class="tab-content">
+      <h1>Aviso Legal</h1>
+
+      <p>European HR Services GmbH<br>
+      Rosenstraße 13<br>
+      78669 Wilflingen<br>
+      Alemania</p>
+
+      <h2>Representada por</h2>
+      <p>Alejandra Leibold</p>
+
+      <h2>Contacto</h2>
+      <p><strong>Correo electrónico:</strong> info@european-hr-services.de</p>
+
+      <h2>Registro Mercantil</h2>
+      <p><strong>Registrada en el Registro Mercantil de Múnich</strong><br>
+      Número de registro: HRB 218828</p>
+
+      <h2>Número de IVA</h2>
+      <p>DE300436663</p>
+
+      <h2>Responsable según § 55 RStV</h2>
+      <p>Alejandra Leibold<br>
+      Rosenstraße 13<br>
+      78669 Wilflingen</p>
+
+      <h2>Regulaciones profesionales</h2>
+      <p>No aplica</p>
+
+      <h2>Descargo de responsabilidad</h2>
+      <p>A pesar de un control cuidadoso del contenido, no asumimos responsabilidad por los enlaces externos. Los operadores de las páginas enlazadas son los únicos responsables de su contenido.</p>
+    </div>
+
+    <div id="privacidad" class="tab-content">
+      <h1>Política de Privacidad</h1>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <p>European HR Services GmbH<br>
+      Rosenstraße 13, 78669 Wilflingen, Alemania<br>
+      Representada por: Alejandra Leibold<br>
+      Correo: info@european-hr-services.de</p>
+
+      <h2>2. Datos personales recopilados</h2>
+      <p>Este sitio web puede utilizarse sin proporcionar datos personales.<br>
+      No recopilamos ningún dato personal a través de este sitio.</p>
+
+      <h2>3. Archivos de registro del servidor</h2>
+      <p>El proveedor de hosting recopila datos técnicos (p. ej., tipo de navegador, fecha y hora).<br>
+      Estos datos no permiten identificar a personas y se utilizan únicamente para garantizar la funcionalidad técnica.</p>
+
+      <h2>4. Transferencia de datos</h2>
+      <p>No se comparte ningún dato personal con terceros.</p>
+
+      <h2>5. Cookies</h2>
+      <p>Este sitio web no utiliza cookies que almacenen datos personales ni permitan el seguimiento del usuario.</p>
+
+      <h2>6. Derechos del usuario</h2>
+      <p>De acuerdo con el RGPD, los usuarios tienen derecho a acceso, rectificación, eliminación, limitación del tratamiento, oposición y portabilidad de datos.<br>
+      Solicitudes: info@european-hr-services.de</p>
+
+      <h2>7. Actualización</h2>
+      <p><em>Fecha de vigencia: febrero 2025</em></p>
+    </div>
   </main>
+
   <footer class="footer">
     <p>&copy; 2025 European HR Services</p>
+    <p>
+      <a href="#" onclick="openTab(event, 'aviso-legal'); return false;">Aviso Legal</a> |
+      <a href="#" onclick="openTab(event, 'privacidad'); return false;">Política de Privacidad</a>
+    </p>
   </footer>
+
+  <script>
+    // Map tab names across languages
+    var tabMapping = {
+      'impressum': { en: 'imprint', de: 'impressum', es: 'aviso-legal' },
+      'imprint': { en: 'imprint', de: 'impressum', es: 'aviso-legal' },
+      'aviso-legal': { en: 'imprint', de: 'impressum', es: 'aviso-legal' },
+      'datenschutz': { en: 'privacy', de: 'datenschutz', es: 'privacidad' },
+      'privacy': { en: 'privacy', de: 'datenschutz', es: 'privacidad' },
+      'privacidad': { en: 'privacy', de: 'datenschutz', es: 'privacidad' }
+    };
+
+    function openTab(evt, tabName) {
+      var i, tabcontent, tabbuttons;
+
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+      }
+
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabName).className += " active";
+      if (evt.currentTarget) {
+        evt.currentTarget.className += " active";
+      }
+
+      // Save the generic tab name
+      if (tabMapping[tabName]) {
+        sessionStorage.setItem('currentTab', tabName);
+      }
+    }
+
+    function saveCurrentTab() {
+      var activeTab = document.querySelector('.tab-content.active');
+      if (activeTab) {
+        sessionStorage.setItem('currentTab', activeTab.id);
+      }
+    }
+
+    // Restore tab on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      var savedTab = sessionStorage.getItem('currentTab');
+      if (savedTab && tabMapping[savedTab]) {
+        var targetTab = tabMapping[savedTab]['es']; // 'es' for Spanish
+        var tabElement = document.getElementById(targetTab);
+        if (tabElement) {
+          openTab({ currentTarget: null }, targetTab);
+        }
+      }
+    });
+  </script>
 </body>
 </html>

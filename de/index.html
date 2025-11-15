@@ -13,14 +13,14 @@
       margin-top: 30px;
       flex-wrap: wrap;
     }
-    
+
     .image-container img {
       max-width: 45%;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    
+
     @media (max-width: 768px) {
       .image-container img {
         max-width: 100%;
@@ -31,20 +31,237 @@
 <body>
   <header class="header">
     <a href="../index.html"><img src="../assets/images/logo.jpg" alt="European HR Services Logo" class="logo"></a>
-    <nav><a href="../en/">EN</a> | <a href="../de/">DE</a> | <a href="../es/">ES</a></nav>
+    <nav><a href="../en/" onclick="saveCurrentTab()">EN</a> | <a href="../de/" onclick="saveCurrentTab()">DE</a> | <a href="../es/" onclick="saveCurrentTab()">ES</a></nav>
   </header>
+
+  <div class="tab-navigation">
+    <button class="tab-button active" onclick="openTab(event, 'willkommen')">Willkommen</button>
+    <button class="tab-button" onclick="openTab(event, 'uber-uns')">Über Uns</button>
+    <button class="tab-button" onclick="openTab(event, 'offene-stellen')">Offene Stellen</button>
+  </div>
+
   <main class="main">
-    <h1>Unsere Website wird derzeit überarbeitet</h1>
-    <p>Wir sind bald mit einem neuen Design zurück. In der Zwischenzeit können Sie uns kontaktieren:</p>
-    <p><strong>info@european-hr-services.de</strong></p>
-    
-    <div class="image-container">
-      <img src="../assets/images/Pflichtpraktikum_1.jpg" alt="Pflichtpraktikum 1">
-      <img src="../assets/images/Pflichtpraktikum_2.jpg" alt="Pflichtpraktikum 2">
+    <div id="willkommen" class="tab-content active">
+      <h1>🌍 Willkommen bei European HR Services GmbH</h1>
+
+      <h2>Globale Talente verbinden mit deutscher Exzellenz</h2>
+
+      <p>Die European HR Services GmbH ist darauf spezialisiert, Deutschlands führende Arbeitgeber mit hochqualifizierten Fachkräften aus aller Welt zu vernetzen. Ob Ingenieure, IT-Experten, medizinisches Fachpersonal oder andere gefragte Berufsgruppen – wir bringen internationale Kompetenz direkt zu Ihnen.</p>
+
+      <h2>💼 Was Wir Tun</h2>
+
+      <p><strong>Internationale Rekrutierung:</strong> Wir rekrutieren, prüfen und vermitteln Spitzenkandidaten aus Europa, Asien, Afrika und Amerika.</p>
+
+      <p><strong>Rundum-Service:</strong> Von der Visumsbeantragung bis zur kulturellen Integration begleiten wir Kandidaten und Unternehmen durch jeden Schritt.</p>
+
+      <p><strong>Branchenspezialisierung:</strong> Wir bedienen unter anderem die Bereiche Technologie, Ingenieurwesen, Gesundheitswesen, Finanzen und mehr.</p>
+
+      <h2>🌐 Warum Wir?</h2>
+
+      <p><strong>Mehrsprachige Berater:</strong> Unser Team spricht Deutsch, Englisch, Spanisch, Französisch, Arabisch, und weitere Sprachen – für reibungslose Kommunikation über Grenzen hinweg.</p>
+
+      <p><strong>Akademisch Qualifizierte Experten:</strong> Unsere Berater verfügen über Hochschulabschlüsse in Personalwesen, Betriebswirtschaft, Jura, Internationale Beziehungen, IT, Medizin und Kieferorthopädie.</p>
+
+      <p><strong>Globales Netzwerk:</strong> Wir pflegen Partnerschaften mit Universitäten, Ausbildungszentren und Fachnetzwerken weltweit.</p>
+
+      <p><strong>Deutsche Präzision, internationale Reichweite:</strong> Wir verbinden die Strenge deutscher Unternehmenskultur mit der Dynamik globaler Rekrutierung.</p>
+
+      <h2>🤝 Für Arbeitgeber</h2>
+
+      <p>Sie suchen qualifizierte Fachkräfte, die bereit sind, umzuziehen und vom ersten Tag an mitzugestalten? Wir passen unsere Suche individuell an Ihre Anforderungen an – für kulturelle Passung und nachhaltigen Erfolg.</p>
+
+      <h2>✈️ Für Kandidaten</h2>
+
+      <p>Träumen Sie von einer Karriere in Deutschland? Wir helfen Ihnen, sich auf dem Arbeitsmarkt zurechtzufinden, bereiten Sie auf Vorstellungsgespräche vor und begleiten Sie bei Ihrem Neustart mit Zuversicht.</p>
+
+      <h2>📞 Kontaktieren Sie Uns</h2>
+
+      <p>Bereit, Ihr Traumteam aufzubauen – oder den nächsten Karriereschritt zu gehen? Kontaktieren Sie uns noch heute und erleben Sie, wie European HR Services GmbH globale Rekrutierung lokal erlebbar macht.</p>
+
+      <p><strong>E-Mail: info@european-hr-services.de</strong></p>
+    </div>
+
+    <div id="uber-uns" class="tab-content">
+      <h1>Über Uns</h1>
+
+      <h2>Ihre Brücke zu globalem Talent</h2>
+
+      <p>European HR Services GmbH ist eine international ausgerichtete Personalberatung mit Sitz in Deutschland. Unser Ziel ist es, hochqualifizierte Fachkräfte aus aller Welt mit führenden Unternehmen in Deutschland zu verbinden – effizient, nachhaltig und kulturell passend.</p>
+
+      <h2>Unsere Mission</h2>
+
+      <p>Wir glauben, dass Talent keine Grenzen kennt. Unsere Mission ist es, Unternehmen mit den besten Köpfen weltweit zu vernetzen und gleichzeitig Kandidaten eine neue berufliche Perspektive in Deutschland zu eröffnen.</p>
+
+      <h2>Was Uns Auszeichnet</h2>
+
+      <p><strong>Internationale Expertise:</strong> Wir verfügen über ein globales Netzwerk und langjährige Erfahrung in der Rekrutierung von Fachkräften aus Europa, Asien, Afrika und Amerika.</p>
+
+      <p><strong>Akademisch Qualifiziertes Team:</strong> Unsere Berater sind hochgebildet und verfügen über Abschlüsse in Personalwesen, Betriebswirtschaft, Jura, IT, Medizin und internationalen Beziehungen.</p>
+
+      <p><strong>Mehrsprachige Kommunikation:</strong> Unser Team spricht Deutsch, Englisch, Spanisch, Französisch, Arabisch, Russisch, Hindi und weitere Sprachen – für eine reibungslose Kommunikation mit Kandidaten und Unternehmen weltweit.</p>
+
+      <p><strong>Ganzheitlicher Ansatz:</strong> Wir begleiten unsere Kunden und Kandidaten von der ersten Kontaktaufnahme bis zur erfolgreichen Integration – inklusive Visumsberatung, Relocation und interkulturellem Coaching.</p>
+
+      <h2>Unsere Werte</h2>
+
+      <p><strong>Vertrauen:</strong> Wir bauen langfristige Beziehungen auf – mit Unternehmen und Kandidaten.</p>
+
+      <p><strong>Transparenz:</strong> Klare Prozesse, offene Kommunikation und ehrliche Beratung stehen bei uns im Mittelpunkt.</p>
+
+      <p><strong>Vielfalt:</strong> Wir fördern kulturelle Vielfalt und sehen sie als Bereicherung für den deutschen Arbeitsmarkt.</p>
+
+      <p><strong>Exzellenz:</strong> Unser Anspruch ist höchste Qualität – in Beratung, Auswahl und Betreuung.</p>
+
+      <h2>Gemeinsam Zukunft gestalten</h2>
+
+      <p>Ob Sie als Unternehmen auf der Suche nach internationalen Fachkräften sind oder als Kandidat Ihre Karriere in Deutschland starten möchten – European HR Services GmbH ist Ihr verlässlicher Partner.</p>
+
+      <p><strong>E-Mail: info@european-hr-services.de</strong></p>
+    </div>
+
+    <div id="offene-stellen" class="tab-content">
+      <h1>Offene Stellen</h1>
+
+      <h2>Aktuelle Stellenangebote</h2>
+
+      <p>Entdecken Sie unsere aktuellen Stellenangebote und Praktikumsmöglichkeiten.</p>
+
+      <div class="image-container">
+        <img src="../assets/images/Pflichtpraktikum_1.jpg" alt="Pflichtpraktikum 1">
+        <img src="../assets/images/Pflichtpraktikum_2.jpg" alt="Pflichtpraktikum 2">
+      </div>
+
+      <p>Für weitere Informationen zu offenen Stellen kontaktieren Sie uns bitte unter:</p>
+      <p><strong>E-Mail: info@european-hr-services.de</strong></p>
+    </div>
+
+    <div id="impressum" class="tab-content">
+      <h1>Impressum</h1>
+
+      <p>European HR Services GmbH<br>
+      Rosenstraße 13<br>
+      78669 Wilflingen<br>
+      Deutschland</p>
+
+      <h2>Vertreten durch</h2>
+      <p>Alejandra Leibold</p>
+
+      <h2>Kontakt</h2>
+      <p><strong>E-Mail:</strong> info@european-hr-services.de</p>
+
+      <h2>Registereintrag</h2>
+      <p><strong>Eintragung im Handelsregister:</strong><br>
+      Registergericht: München<br>
+      Registernummer: HRB 218828</p>
+
+      <h2>Umsatzsteuer-ID</h2>
+      <p>DE300436663</p>
+
+      <h2>Verantwortlich nach § 55 Abs. 2 RStV</h2>
+      <p>Alejandra Leibold<br>
+      Rosenstraße 13<br>
+      78669 Wilflingen</p>
+
+      <h2>Berufsspezifische Regelungen</h2>
+      <p>Keine</p>
+
+      <h2>Haftungsausschluss</h2>
+      <p>Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für externe Links. Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+    </div>
+
+    <div id="datenschutz" class="tab-content">
+      <h1>Datenschutzerklärung</h1>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>European HR Services GmbH<br>
+      Rosenstraße 13, 78669 Wilflingen, Deutschland<br>
+      Vertretung: Alejandra Leibold<br>
+      E-Mail: info@european-hr-services.de</p>
+
+      <h2>2. Erhebung personenbezogener Daten</h2>
+      <p>Unsere Website kann ohne Angabe personenbezogener Daten genutzt werden.<br>
+      Wir erheben keine personenbezogenen Daten über diese Website.</p>
+
+      <h2>3. Server-Logfiles</h2>
+      <p>Der Hostinganbieter erhebt technische Server-Logdaten (z. B. Zeitpunkt des Aufrufs, Browsertyp).<br>
+      Diese Daten sind nicht personenbezogen und dienen ausschließlich der technischen Funktionsfähigkeit.</p>
+
+      <h2>4. Weitergabe von Daten</h2>
+      <p>Es erfolgt keine Weitergabe personenbezogener Daten.</p>
+
+      <h2>5. Cookies</h2>
+      <p>Unsere Website verwendet keine Cookies, die personenbezogene Daten speichern oder Nutzertracking ermöglichen.</p>
+
+      <h2>6. Betroffenenrechte</h2>
+      <p>Auch wenn keine personenbezogenen Daten erhoben werden, haben Nutzer die Rechte gemäß DSGVO: Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit.<br>
+      Anfragen: info@european-hr-services.de</p>
+
+      <h2>7. Aktualität</h2>
+      <p><em>Stand: Februar 2025</em></p>
     </div>
   </main>
+
   <footer class="footer">
     <p>&copy; 2025 European HR Services</p>
+    <p>
+      <a href="#" onclick="openTab(event, 'impressum'); return false;">Impressum</a> |
+      <a href="#" onclick="openTab(event, 'datenschutz'); return false;">Datenschutz</a>
+    </p>
   </footer>
+
+  <script>
+    // Map tab names across languages
+    var tabMapping = {
+      'impressum': { en: 'imprint', de: 'impressum', es: 'aviso-legal' },
+      'imprint': { en: 'imprint', de: 'impressum', es: 'aviso-legal' },
+      'aviso-legal': { en: 'imprint', de: 'impressum', es: 'aviso-legal' },
+      'datenschutz': { en: 'privacy', de: 'datenschutz', es: 'privacidad' },
+      'privacy': { en: 'privacy', de: 'datenschutz', es: 'privacidad' },
+      'privacidad': { en: 'privacy', de: 'datenschutz', es: 'privacidad' }
+    };
+
+    function openTab(evt, tabName) {
+      var i, tabcontent, tabbuttons;
+
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+      }
+
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabName).className += " active";
+      if (evt.currentTarget) {
+        evt.currentTarget.className += " active";
+      }
+
+      // Save the generic tab name
+      if (tabMapping[tabName]) {
+        sessionStorage.setItem('currentTab', tabName);
+      }
+    }
+
+    function saveCurrentTab() {
+      var activeTab = document.querySelector('.tab-content.active');
+      if (activeTab) {
+        sessionStorage.setItem('currentTab', activeTab.id);
+      }
+    }
+
+    // Restore tab on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      var savedTab = sessionStorage.getItem('currentTab');
+      if (savedTab && tabMapping[savedTab]) {
+        var targetTab = tabMapping[savedTab]['de']; // 'de' for German
+        var tabElement = document.getElementById(targetTab);
+        if (tabElement) {
+          openTab({ currentTarget: null }, targetTab);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
