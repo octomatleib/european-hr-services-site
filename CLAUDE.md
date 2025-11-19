@@ -28,8 +28,10 @@ This is a static multilingual website for European HR Services GmbH, a German-ba
 │   ├── aviso-legal.html   # Legal imprint
 │   └── privacidad.html    # Privacy policy
 └── assets/
-    ├── css/style.css      # Shared stylesheet
-    └── images/            # Logo and content images
+    ├── css/style.css          # Shared stylesheet (includes cookie banner styles)
+    ├── js/
+    │   └── cookie-consent.js  # GDPR-compliant cookie consent management
+    └── images/                # Logo and content images
 ```
 
 ## Architecture & Key Features
@@ -86,6 +88,7 @@ The site uses a clean, modern structure with separate pages instead of tab-based
 - Links to Impressum/Imprint
 - Links to Datenschutz/Privacy
 - Careers link (German only)
+- Cookie Settings link (opens cookie consent banner)
 
 ### Styling
 
@@ -95,6 +98,35 @@ The site uses a consistent color scheme defined in `assets/css/style.css`:
 - Background: `#f9f9f9` (light gray)
 
 Responsive design with mobile breakpoints at 600px and 768px. Mobile navigation uses a hamburger menu toggle.
+
+### Google Analytics & Cookie Consent (GDPR/DSGVO Compliance)
+
+The site implements **Google Analytics 4** (GA4) with full GDPR compliance using **Google Consent Mode v2**:
+
+**Privacy-by-Default Approach**:
+- All analytics tracking is **disabled by default** (Consent Mode v2 default state: denied)
+- GA4 only loads after explicit user consent via cookie banner
+- IP anonymization enabled (`anonymize_ip: true`)
+- Google Signals disabled (`allow_google_signals: false`)
+
+**Cookie Banner** (`assets/js/cookie-consent.js`):
+- Multilingual support (DE/EN/ES) with automatic language detection
+- Granular consent options: necessary cookies vs. analytics cookies
+- Consent preferences stored in localStorage
+- Real-time Google Consent Mode updates
+- Reopenable via "Cookie Settings" footer link on all pages
+
+**Privacy Policies**:
+- All three language versions include detailed GA4 and Consent Mode v2 information
+- Data retention: 14 months for event data, 2 years for cookies
+- EU-US Data Privacy Framework (DPF) disclosure
+- User rights under GDPR (Art. 15-21)
+
+**Technical Implementation**:
+- Google Consent Mode v2 script in `<head>` of all pages sets default consent to 'denied'
+- GA4 tracking code (G-GYVLWB0C08) loads but remains inactive until consent
+- Cookie banner appears on first visit and updates consent state dynamically
+- No cookies set until user explicitly accepts analytics
 
 ## Development Workflow
 
@@ -143,9 +175,10 @@ Adjust the paths accordingly for each page (e.g., `/about.html`, `/imprint.html`
 - No build system or package manager required
 - No dependencies beyond standard HTML/CSS/JavaScript
 - All assets are relative-pathed from language subdirectories
-- No cookies or tracking - GDPR-compliant
-- No personal data collection
-- Simple JavaScript for mobile menu toggle and smooth scrolling only
+- **GDPR-compliant analytics**: Google Analytics 4 with Consent Mode v2 (tracking only with explicit user consent)
+- **Privacy-by-default**: No cookies set until user accepts analytics via cookie banner
+- JavaScript includes: mobile menu toggle, smooth scrolling, and cookie consent management
+- Cookie banner automatically detects page language and displays appropriate translations
 
 ## Contact Information
 
