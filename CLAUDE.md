@@ -4,16 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static multilingual website for European HR Services GmbH, a German-based international recruitment consultancy. The site is deployed via GitHub Pages and features three language versions (German, English, Spanish) with synchronized navigation.
+This is a static multilingual website for European HR Services GmbH, a German-based international recruitment consultancy. The site is deployed via GitHub Pages and features three language versions (German, English, Spanish) with a clean, SEO-optimized structure.
 
 ## Repository Structure
 
 ```
 .
-├── index.html              # Language selection landing page
-├── de/index.html          # German version (most complete)
-├── en/index.html          # English version
-├── es/index.html          # Spanish version
+├── index.html              # Main landing page (English)
+├── de/                     # German version
+│   ├── index.html         # German homepage
+│   ├── about.html         # About Us page
+│   ├── careers.html       # Careers/Jobs page (with internship images)
+│   ├── impressum.html     # Legal imprint
+│   └── datenschutz.html   # Privacy policy
+├── en/                     # English version
+│   ├── index.html         # English homepage
+│   ├── about.html         # About Us page
+│   ├── imprint.html       # Legal imprint
+│   └── privacy.html       # Privacy policy
+├── es/                     # Spanish version
+│   ├── index.html         # Spanish homepage
+│   ├── about.html         # About Us page
+│   ├── aviso-legal.html   # Legal imprint
+│   └── privacidad.html    # Privacy policy
 └── assets/
     ├── css/style.css      # Shared stylesheet
     └── images/            # Logo and content images
@@ -21,30 +34,58 @@ This is a static multilingual website for European HR Services GmbH, a German-ba
 
 ## Architecture & Key Features
 
-### Multi-Language Tab Synchronization
+### SEO-Optimized Multi-Language Structure
 
-The site implements cross-language tab persistence using `sessionStorage` and a `tabMapping` object. Each language version contains identical JavaScript that maps tab names across languages:
+The site uses a clean, modern structure with separate pages instead of tab-based navigation:
 
-- Welcome tabs: `willkommen` (DE) ↔ `welcome` (EN) ↔ `bienvenido` (ES)
-- About tabs: `uber-uns` (DE) ↔ `about` (EN) ↔ `sobre-nosotros` (ES)
-- Legal tabs: `impressum` / `imprint` / `aviso-legal` and `datenschutz` / `privacy` / `privacidad`
+- **Each language has its own directory** (`/de/`, `/en/`, `/es/`) with localized content
+- **Clear URL structure** - every page has a unique, indexable URL
+- **hreflang tags** on all pages for proper multilingual SEO
+- **Canonical tags** to prevent duplicate content issues
+- **Dedicated legal pages** that are directly accessible and indexable
 
-When users switch languages via the header navigation, the `saveCurrentTab()` function stores the current tab, and on page load, the site automatically opens the equivalent tab in the new language.
+### Page Structure
 
-### Content Structure
+**Homepages** (`/de/`, `/en/`, `/es/`):
+- Hero section with call-to-action
+- Services overview (4 main service cards)
+- Why Us section (4 value propositions)
+- About preview section with link to full About page
+- Target audience section
+- Testimonials
+- Contact section with email CTAs
 
-**German version (`de/index.html`)** has three main tabs plus legal pages:
-- Willkommen (Welcome)
-- Über Uns (About Us)
-- Offene Stellen (Open Positions) - unique to German version, displays internship images
+**About Pages** (`about.html`):
+- Full company information
+- Mission and values
+- What sets the company apart
+- Team qualifications
+- Link back to homepage
 
-**English and Spanish versions** have two main tabs plus legal pages:
-- Welcome / Bienvenido
-- About Us / Sobre Nosotros
+**Careers Page** (`de/careers.html`):
+- German-only page for job listings
+- Displays internship images (`Pflichtpraktikum_1.jpg`, `Pflichtpraktikum_2.jpg`)
+- Contact information for applications
 
-All versions include footer-accessible legal tabs:
-- Impressum/Imprint/Aviso Legal
-- Datenschutz/Privacy/Privacidad
+**Legal Pages**:
+- Impressum/Imprint/Aviso Legal - Company registration details
+- Datenschutz/Privacy/Privacidad - GDPR-compliant privacy policy
+
+### Navigation
+
+**Header Navigation** (consistent across all pages):
+- Logo linking to homepage
+- Service sections (anchor links on homepage)
+- About Us link (to dedicated page)
+- Careers link (German only)
+- Contact section (anchor link on homepage)
+- Language switcher with active state
+
+**Footer Navigation**:
+- Copyright notice
+- Links to Impressum/Imprint
+- Links to Datenschutz/Privacy
+- Careers link (German only)
 
 ### Styling
 
@@ -53,7 +94,7 @@ The site uses a consistent color scheme defined in `assets/css/style.css`:
 - Accent: `#DBD700` (yellow)
 - Background: `#f9f9f9` (light gray)
 
-Tab navigation is responsive with mobile breakpoints at 600px and 768px.
+Responsive design with mobile breakpoints at 600px and 768px. Mobile navigation uses a hamburger menu toggle.
 
 ## Development Workflow
 
@@ -62,10 +103,7 @@ Tab navigation is responsive with mobile breakpoints at 600px and 768px.
 Since this is a static site with no build process, simply open the HTML files in a browser:
 
 ```bash
-# Open the landing page
-open index.html
-
-# Or serve with a local server to avoid CORS issues
+# Serve with a local server
 python3 -m http.server 8000
 # Then visit http://localhost:8000
 ```
@@ -78,21 +116,36 @@ The site is hosted on GitHub Pages. Changes pushed to the `main` branch are auto
 
 ### Adding New Content
 
-1. **New Tabs**: Add to all three language versions to maintain consistency
-2. **Update tabMapping**: Ensure the JavaScript `tabMapping` object includes new tab IDs across all language files
-3. **Legal Content**: Keep Impressum/Privacy pages updated with current company information
+1. **New Pages**: Create the page in all three language directories (`de/`, `en/`, `es/`) to maintain consistency
+2. **Update Navigation**: Add links in header/footer across all language versions
+3. **Add hreflang Tags**: Include proper hreflang and canonical tags in the `<head>` section
+4. **Legal Content**: Keep Impressum/Privacy pages updated with current company information
 
 ### Language-Specific Features
 
-The German version includes an "Offene Stellen" (Open Positions) tab that displays internship announcements via images (`Pflichtpraktikum_1.jpg` and `Pflichtpraktikum_2.jpg`). This tab is German-only and maps to the welcome page in other languages.
+The German version includes a **Careers page** (`de/careers.html`) that displays job openings and internship announcements via images. The English and Spanish versions do not currently have careers pages.
+
+### hreflang Implementation
+
+All pages include hreflang tags for proper multilingual SEO:
+
+```html
+<link rel="alternate" hreflang="de" href="https://european-hr-services.de/de/">
+<link rel="alternate" hreflang="en" href="https://european-hr-services.de/en/">
+<link rel="alternate" hreflang="es" href="https://european-hr-services.de/es/">
+<link rel="alternate" hreflang="x-default" href="https://european-hr-services.de/en/">
+```
+
+Adjust the paths accordingly for each page (e.g., `/about.html`, `/imprint.html`, etc.).
 
 ## Important Notes
 
 - No build system or package manager required
 - No dependencies beyond standard HTML/CSS/JavaScript
 - All assets are relative-pathed from language subdirectories
-- sessionStorage is used for tab persistence (no cookies or tracking)
-- GDPR-compliant with no personal data collection
+- No cookies or tracking - GDPR-compliant
+- No personal data collection
+- Simple JavaScript for mobile menu toggle and smooth scrolling only
 
 ## Contact Information
 
