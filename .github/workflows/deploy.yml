@@ -24,14 +24,16 @@ jobs:
 
       - name: Deploy to Netlify (Preview)
         if: github.event_name == 'pull_request'
-        run: netlify deploy --dir=./ --message "Preview deploy for PR #${{ github.event.pull_request.number }}"
+        run: |
+          netlify deploy --dir=./ --message "Preview deploy for PR #${{ github.event.pull_request.number }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Deploy to Netlify (Production)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: netlify deploy --prod --dir=./ --message "Production deploy from commit ${{ github.sha }}"
+        run: |
+          netlify deploy --prod --dir=./ --message "Production deploy from commit ${{ github.sha }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
