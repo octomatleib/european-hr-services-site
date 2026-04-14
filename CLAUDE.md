@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static multilingual website for European HR Services GmbH, a German-based international recruitment consultancy. The site is deployed via GitHub Pages and features three language versions (German, English, Spanish) with a clean, SEO-optimized structure.
+This is a static multilingual website for European HR Services GmbH, a German-based international recruitment consultancy. The site is deployed via Netlify (through GitHub Actions) and features three language versions (German, English, Spanish) with a clean, SEO-optimized structure.
 
 ## Repository Structure
 
@@ -54,7 +54,6 @@ The site uses a clean, modern structure with separate pages instead of tab-based
 - Why Us section (4 value propositions)
 - About preview section with link to full About page
 - Target audience section
-- Testimonials
 - Contact section with email CTAs
 
 **About Pages** (`about.html`):
@@ -142,7 +141,12 @@ python3 -m http.server 8000
 
 ### Deployment
 
-The site is hosted on GitHub Pages. Changes pushed to the `main` branch are automatically deployed.
+The site is hosted on **Netlify**, deployed via the GitHub Actions workflow at `.github/workflows/deploy.yml`:
+
+- **Push to `main`** → production deploy (`netlify deploy --prod`)
+- **Pull request** → preview deploy (no `--prod` flag, generates a temporary preview URL)
+
+Required GitHub repository secrets: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
 
 ## Content Guidelines
 
